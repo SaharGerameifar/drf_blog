@@ -1,0 +1,16 @@
+{% extends 'article/base.html' %}
+{% block main %} 
+    {% for article in object_list %}
+    <article>
+        <h1> {{article.title}}</h1>
+        <h4> {{article.author}}</h4>
+        <span> {{article.publish}}</span>
+        <p> {{article.content|linebreaks}}</p>
+        <a href="{% url 'article:detail' article.slug %}">detail</a>
+    </article>
+    <hr>
+    {% empty %}
+        <div>nothing for show</div>
+    {% endfor %}
+
+{% endblock %}

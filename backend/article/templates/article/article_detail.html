@@ -1,0 +1,9 @@
+{% extends 'article/base.html' %}
+{% block main %}
+    <article>
+        <h1> {{object.title}}</h1>
+        <h4> {{object.author}}</h4>
+        <span> {{object.publish}}</span>
+        <p> {{object.content|linebreaks}}</p>
+    </article>
+{% endblock %}
